@@ -1,8 +1,6 @@
 # Api Syntax
 
-Most commands consist of accepting some type of argument and then a set of options to specify the methods to call on the input. Below is documentation
-
-on the syntax that applies to most commands in this cli.
+Most commands consist of accepting some type of argument and then a set of options to specify the methods to call on the input. Below is documentation on the syntax that applies to most commands in this cli.
 
 # Calling Methods
 
