@@ -1,0 +1,75 @@
+{
+    "name": "surgiie/illuminate-cli",
+    "description": "A command-line for various laravel illuminate or framework components.",
+    "keywords": [
+        "framework",
+        "laravel",
+        "console",
+        "cli",
+        "illuminate",
+        "support"
+    ],
+    "type": "project",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/surgiie/illuminate-cli/issues",
+        "source": "https://github.com/surgiie/illuminate-cli"
+    },
+    "authors": [
+        {
+            "name": "Sergio Compean",
+            "email": "scompean24@gmail.com"
+        }
+    ],
+    "scripts": {
+        "test": "vendor/bin/pest tests -c phpunit.xml.dist"
+    },
+    "require": {
+        "php": "^8.2.0",
+        "illuminate/cache": "^11.44",
+        "illuminate/encryption": "^11.44",
+        "illuminate/support": "^11.44",
+        "illuminate/validation": "^11.44",
+        "illuminate/view": "^11.44",
+        "laravel-zero/framework": "^11.36.1",
+        "laravel/tinker": "^2.10",
+        "nunomaduro/laravel-console-dusk": "^1.14",
+        "psy/psysh": "^0.12.8",
+        "spatie/laravel-directory-cleanup": "^1.10",
+        "surgiie/artisan-arbitrary-options": "^0.3.0",
+        "symfony/yaml": "^7.2"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.18.3",
+        "mockery/mockery": "^1.6.12",
+        "pestphp/pest": "^3.7.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "./app/helpers.php"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "bin": [
+        "./builds/illuminate"
+    ]
+}
