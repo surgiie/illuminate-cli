@@ -2,7 +2,7 @@
 
 if (! function_exists('illuminate_cli_workspace_path')) {
     /**
-     * Compute a path to a temporary workspace for the CLI depending on how the cli is run.
+     * Compute a path to a temporary workspace for the CLI depending cli context.
      */
     function illuminate_cli_workspace_path(string $path, ?string $envName = null): string
     {
