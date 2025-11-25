@@ -12,10 +12,13 @@ trait CallsMethods
     /**
      * The exception thrown when a method call fails.
      *
-     * @var \Throwable
+     * @var \Throwable|null
      */
     protected $failedCalledMethodException = null;
 
+    /**
+     * Get the regular expression for matching type cast syntax.
+     */
     protected function getCastRegex(): string
     {
         return '/^@(json|int|float|bool|null)\((.*)\)$/';
@@ -23,6 +26,8 @@ trait CallsMethods
 
     /**
      * Determine if the value should be cast to a type.
+     *
+     * @param  string  $value  The value to check
      */
     protected function shouldCastValue(string $value): bool
     {
@@ -30,7 +35,12 @@ trait CallsMethods
     }
 
     /**
-     * Cast or serialize value to a type if needed if wrapped by special @<type>(<value>) syntax.
+     * Cast or serialize value to a type if wrapped by special @<type>(<value>) syntax.
+     *
+     * Supported types: json, int, float, bool, null
+     *
+     * @param  string  $value  The value to process
+     * @return mixed The processed value
      */
     public function processValueForTypeCast(string $value)
     {
@@ -63,6 +73,11 @@ trait CallsMethods
 
     /**
      * Name arguments if arguments are named or use reflection to get the method argument names.
+     *
+     * @param  object|string  $class  The class or object instance
+     * @param  string  $method  The method name
+     * @param  array<int, string>  $args  The arguments to name and cast
+     * @return array<string, mixed> Named and cast arguments
      */
     protected function nameAndCastArguments(object|string $class, string $method, array $args): mixed
     {
@@ -95,6 +110,11 @@ trait CallsMethods
 
     /**
      * Call method on given object or class.
+     *
+     * @param  string|object  $obj  The object instance or class name
+     * @param  string  $method  The method name to call
+     * @param  string|null  $args  String representation of arguments
+     * @return mixed The result of the method call
      */
     protected function callMethodFromCommandArgs(string|object $obj, string $method, ?string $args = ''): mixed
     {
@@ -129,7 +149,10 @@ trait CallsMethods
     }
 
     /**
-     * Split arguments string list.
+     * Split arguments string list by comma, respecting escaped commas and parentheses.
+     *
+     * @param  string  $input  The input string to split
+     * @return array<int, string> Array of split arguments
      */
     protected function splitArguments(string $input)
     {
@@ -144,6 +167,11 @@ trait CallsMethods
 
     /**
      * Parse string arguments from the command line.
+     *
+     * @param  string|null  $args  The arguments string to parse
+     * @param  string|object  $class  The class or object instance
+     * @param  string  $method  The method name
+     * @return array<string, mixed> Parsed and cast arguments
      */
     protected function parseStringArguments(?string $args, string|object $class, string $method): array
     {

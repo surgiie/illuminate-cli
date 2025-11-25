@@ -40,6 +40,44 @@ See [syntax documentation](/docs/syntax.md) and associated docs for each compone
 - [Illuminate\Support\Stringable](https://laravel.com/docs/11.x/strings) - [Docs](/docs/support/stringable.md)
 - [Illuminate\Support\Collection](https://laravel.com/docs/11.x/collections) - [Docs](/docs/support/collection.md)
 
+## Development
+
+### Requirements
+
+- PHP 8.2 or higher
+- Composer
+
+### Setup
+
+```bash
+git clone https://github.com/surgiie/illuminate-cli.git
+cd illuminate-cli
+composer install
+```
+
+### Testing
+
+```bash
+composer test
+```
+
+### Code Quality
+
+```bash
+# Run PHPStan static analysis
+composer phpstan
+
+# Check code formatting
+composer format:test
+
+# Fix code formatting
+composer format
+```
+
+### Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
+
 ## Considerations
 
-- Supported components does necessarily mean they are fully implemented or feature complete. If you find any issues, please open an issue. Some features for components might not be supported or replicated to the command line.
+- Supported components does not necessarily mean they are fully implemented or feature complete. If you find any issues, please open an issue. Some features for components might not be supported or replicated to the command line.

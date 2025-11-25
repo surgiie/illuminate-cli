@@ -2,7 +2,13 @@
 
 if (! function_exists('illuminate_cli_workspace_path')) {
     /**
-     * Compute a path to a temporary workspace for the CLI depending cli context.
+     * Compute a path to a temporary workspace for the CLI depending on context.
+     *
+     * Returns a path based on whether running as PHAR or in development.
+     *
+     * @param  string  $path  The relative path within the workspace
+     * @param  string|null  $envName  Optional environment variable name to override path
+     * @return string The full workspace path
      */
     function illuminate_cli_workspace_path(string $path, ?string $envName = null): string
     {
@@ -16,7 +22,11 @@ if (! function_exists('illuminate_cli_workspace_path')) {
 
 if (! function_exists('indent_lines')) {
     /**
-     * Indent each line in the given content by the number of given spaces
+     * Indent each line in the given content by the number of given spaces.
+     *
+     * @param  string  $content  The content to indent
+     * @param  int  $spaces  Number of spaces to indent each line
+     * @return string The indented content
      */
     function indent_lines(string $content, int $spaces): string
     {

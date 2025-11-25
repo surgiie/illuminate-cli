@@ -7,7 +7,10 @@ use Illuminate\Console\ManuallyFailedException;
 trait LoadsJsonFiles
 {
     /**
-     * Return a more human readable error message for json errors.
+     * Return a more human readable error message for JSON errors.
+     *
+     * @param  string  $error  The JSON error code
+     * @return string Human-readable error message
      */
     protected function formatJsonParseError(string $error): string
     {
@@ -28,7 +31,13 @@ trait LoadsJsonFiles
     }
 
     /**
-     * Loads a json file and returns the decoded json.
+     * Load a JSON file and return the decoded data.
+     *
+     * @param  string  $path  Path to the JSON file
+     * @param  int  $options  JSON decode options
+     * @return array<string, mixed> Decoded JSON data
+     *
+     * @throws \Illuminate\Console\ManuallyFailedException
      */
     public function loadJsonFile(string $path, $options = JSON_OBJECT_AS_ARRAY): array
     {
