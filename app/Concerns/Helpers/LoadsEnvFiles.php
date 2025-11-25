@@ -9,6 +9,11 @@ trait LoadsEnvFiles
 {
     /**
      * Parse a dot env file into an array of variables.
+     *
+     * @param  string  $path  Path to the .env file
+     * @return array<string, string> Parsed environment variables
+     *
+     * @throws \Illuminate\Console\ManuallyFailedException
      */
     public function getEnvFileVariables(string $path): array
     {
@@ -21,6 +26,11 @@ trait LoadsEnvFiles
 
     /**
      * Parse .env file and load it into the environment.
+     *
+     * @param  string  $path  Path to the .env file
+     * @return array<string, string> Loaded environment variables
+     *
+     * @throws \Illuminate\Console\ManuallyFailedException
      */
     public function loadEnvFileVariables(string $path): array
     {

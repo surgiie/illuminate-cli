@@ -23,7 +23,10 @@ abstract class BaseCommand extends Command
     }
 
     /**
-     * Start a Psy Shell with the given variables.
+     * Start a Psy Shell (tinker) session with the given variables.
+     *
+     * @param  array<string, mixed>  $vars  Variables to make available in the shell
+     * @return array<string, mixed> Updated variables after shell session
      */
     protected function tinker(array $vars = []): array
     {
@@ -45,6 +48,8 @@ abstract class BaseCommand extends Command
 
     /**
      * Print a debug message if the command has a --debug option and it is passed.
+     *
+     * @param  string  $message  The debug message to display
      */
     protected function debug(string $message): void
     {
@@ -64,7 +69,11 @@ abstract class BaseCommand extends Command
     /**
      * Run a long running task with a spinner.
      *
-     * @return bool|null
+     * @param  string  $title  The title to display while task is running
+     * @param  \Closure|null  $task  The task closure to execute
+     * @param  string  $finishedText  Text to display when task completes
+     * @param  bool  $spinner  Whether to show animated spinner
+     * @return mixed The result of the task closure
      */
     public function runTask(string $title = '', ?Closure $task = null, string $finishedText = '', bool $spinner = false)
     {

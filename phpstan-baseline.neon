@@ -1,0 +1,265 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Call to protected method renderStatically\(\) of class Laravel\\Prompts\\Spinner\.$#'
+			identifier: method.protected
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "cache\:forget" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "cache\:get" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "cache\:has" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "cache\:put" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "dusk\:visit" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "encryption\:decrypt" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "encryption\:encrypt" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "encryption\:key" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "validation\:make" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "view\:clear\-compiled" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Command "view\:make" does not have option "debug"\.$#'
+			identifier: larastan.console.undefinedOption
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Method Laravel\\Prompts\\Spinner\:\:spin\(\) invoked with 2 parameters, 1 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: app/Commands/BaseCommand.php
+
+		-
+			message: '#^Dead catch \- InvalidArgumentException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Cache/BaseCommand.php
+
+		-
+			message: '#^Method App\\Commands\\Dusk\\InstallChromeDriverCommand\:\:handle\(\) should return int but returns null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Commands/Dusk/InstallChromeDriverCommand.php
+
+		-
+			message: '#^Result of method Laravel\\Dusk\\Console\\ChromeDriverCommand\:\:handle\(\) \(void\) is used\.$#'
+			identifier: staticMethod.void
+			count: 1
+			path: app/Commands/Dusk/InstallChromeDriverCommand.php
+
+		-
+			message: '#^Access to an undefined property Spatie\\Invade\\Invader\<object\>\|Spatie\\Invade\\StaticInvader\:\:\$browser\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^Call to an undefined method App\\Commands\\Dusk\\VisitCommand\:\:callMethod\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^Call to an undefined method App\\Commands\\Dusk\\VisitCommand\:\:parseActionArguments\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^Call to an undefined method App\\Commands\\Dusk\\VisitCommand\:\:parseStringMethodArguments\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^PHPDoc tag @param references unknown parameter\: \$path$#'
+			identifier: parameter.notFound
+			count: 1
+			path: app/Commands/Dusk/VisitCommand.php
+
+		-
+			message: '#^If condition is always true\.$#'
+			identifier: if.alwaysTrue
+			count: 1
+			path: app/Commands/Encryption/BaseCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Support/CollectionCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Support/NumberCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Support/StrCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Support/StringableCommand.php
+
+		-
+			message: '#^Instanceof between Illuminate\\Support\\Collection and Illuminate\\Support\\Collection will always evaluate to true\.$#'
+			identifier: instanceof.alwaysTrue
+			count: 1
+			path: app/Commands/Support/StringableCommand.php
+
+		-
+			message: '#^Dead catch \- ReflectionException is never thrown in the try block\.$#'
+			identifier: catch.neverThrown
+			count: 1
+			path: app/Commands/Validation/MakeCommand.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Commands/Validation/MakeCommand.php
+
+		-
+			message: '#^Variable \$input might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: app/Commands/Validation/MakeCommand.php
+
+		-
+			message: '#^Variable \$rules might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: app/Commands/Validation/MakeCommand.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Contracts\\View\\View\:\:getEngine\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Commands/View/MakeCommand.php
+
+		-
+			message: '#^Method App\\Commands\\View\\MakeCommand\:\:gatherVariables\(\) invoked with 1 parameter, 0 required\.$#'
+			identifier: arguments.count
+			count: 1
+			path: app/Commands/View/MakeCommand.php
+
+		-
+			message: '#^Method Illuminate\\Console\\Command\:\:option\(\) invoked with 2 parameters, 0\-1 required\.$#'
+			identifier: arguments.count
+			count: 3
+			path: app/Commands/View/MakeCommand.php
+
+		-
+			message: '#^Parameter \#1 \$error of method App\\Commands\\View\\MakeCommand\:\:formatJsonParseError\(\) expects string, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Commands/View/MakeCommand.php
+
+		-
+			message: '#^Parameter \#2 \$associative of function json_decode expects bool\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Commands/View/MakeCommand.php
+
+		-
+			message: '#^Unreachable statement \- code above always terminates\.$#'
+			identifier: deadCode.unreachable
+			count: 1
+			path: app/Extensions/View/BladeCompiler.php
+
+		-
+			message: '#^Method App\\Extensions\\View\\FileViewFinder\:\:findInPaths\(\) with return type void returns string but should not return anything\.$#'
+			identifier: return.void
+			count: 2
+			path: app/Extensions/View/FileViewFinder.php
+
+		-
+			message: '#^Return type \(void\) of method App\\Extensions\\View\\FileViewFinder\:\:findInPaths\(\) should be compatible with return type \(string\) of method Illuminate\\View\\FileViewFinder\:\:findInPaths\(\)$#'
+			identifier: method.childReturnType
+			count: 1
+			path: app/Extensions/View/FileViewFinder.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     ", expected variable at offset 81 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: app/Rules/Validation/IsFileRule.php
+
+		-
+			message: '#^Class Pest\\Laravel\\Commands\\PestDatasetCommand not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: config/commands.php
+
+		-
+			message: '#^Class Pest\\Laravel\\Commands\\PestInstallCommand not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: config/commands.php
+
+		-
+			message: '#^Class Pest\\Laravel\\Commands\\PestTestCommand not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: config/commands.php

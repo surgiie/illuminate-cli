@@ -1,24 +1,23 @@
-name: Tests
+name: PHPStan
 
 on:
   push:
     branches: [main]
     paths:
       - "app/**"
-      - "tests/**"
-      - "composer.json"
-      - "composer.lock"
+      - "config/**"
+      - "bootstrap/**"
+      - "phpstan.neon"
   pull_request:
     branches: [main]
     paths:
       - "app/**"
-      - "tests/**"
-      - "composer.json"
-      - "composer.lock"
+      - "config/**"
+      - "bootstrap/**"
+      - "phpstan.neon"
 
 jobs:
-  tests:
-    if: ${{ github.actor != 'github-actions[bot]' }}
+  phpstan:
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
@@ -46,5 +45,5 @@ jobs:
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress --ignore-platform-req=ext-curl
 
-      - name: Run test suite
-        run: composer test
+      - name: Run PHPStan
+        run: composer phpstan

@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(composer require:*)",
+      "Bash(composer update:*)",
+      "Bash(composer phpstan:*)",
+      "Bash(composer phpstan:baseline:*)",
+      "Bash(composer test:*)",
+      "Bash(composer format:test:*)",
+      "Bash(composer format:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
